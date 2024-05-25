@@ -1,0 +1,28 @@
+<form (ngSubmit)="login()">
+            <div class="row px-sm-3 px-lg-5 py-5 justify-content-center my-5" id="form">
+                <h3 class="display-6 text-center  mb-5">Inicio de Sesión</h3>
+                <p class="description text-center mb-4 ">
+                    Te invitamos a iniciar sesion para poder acceder a más contenido de nuestra página
+                </p>
+                <div class="col-sm-12 col-lg-8 bg-white mt-5">
+                    <div class="row p-5">
+                        <span class="text-center text-primary fs-3">Por favor rellena el formulario</span>
+                        <div class="col-12 mt-3" id="form">
+
+                            <input class="form-control mb-3" type="text" [(ngModel)]="nomUsuario" name="nomUsuario" placeholder="NombreUsuario" aria-label="default input example" required />
+                            <input class="form-control mb-3" type="password" [(ngModel)]="contrasenia" name="contrasenia" placeholder="contraseña" aria-label="default input example" required />
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required />
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Acepto los términos y condiciones
+                                </label>
+                            </div>
+                        </div>
+                        <button style="background-color: #e58b20;"name="enviar" class="btn px-3">Iniciar Sesión</button>
+                        <div *ngIf="errorMessage">{{ errorMessage }}</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+

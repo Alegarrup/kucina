@@ -12,7 +12,7 @@ const app = express();
 const port = 3000;
 
 const corsOptions = {
-    origin: 'http://localhost:4200', // Solo permitir solicitudes desde http://localhost:4200
+    origin: 'https://kucina.netlify.app',  // Solo permitir solicitudes desde http://localhost:4200
   };
   
   app.use(cors(corsOptions));

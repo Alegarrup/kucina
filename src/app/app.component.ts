@@ -11,7 +11,7 @@ import { OktaAuthService } from '@okta/okta-angular';
 
 })
 export class AppComponent implements OnInit {
-  title = 'TFC';
+  title = 'Kucina';
   username: string = '';
   isAuthenticated: boolean = false;
   isLoggedIn: boolean = false;

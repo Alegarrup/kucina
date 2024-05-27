@@ -111,7 +111,7 @@ app.post('/api/finalizar-compra', (req, res) => {
         from: 'tfcalegarrup@hotmail.com',
         to: email,
         subject: 'Confirmación de compra',
-        text: `Gracias por tu compra. Aquí están los productos que compraste: \n\n${products.map(product => `- ${product.material}: ${product.precio}€`).join('\n')}`
+        text: `Gracias por tu compra. Aquí están los productos que compraste: \n\n${products.map(product => `- ${product.material}: ${product.ancho}x${product.largo} cm por ${product.precio}€`).join('\n')}`
     };
 
     // Envía el correo

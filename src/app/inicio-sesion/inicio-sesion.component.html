@@ -2,7 +2,7 @@
             <div class="row px-sm-3 px-lg-5 py-5 justify-content-center my-5" id="form">
                 <h3 class="display-6 text-center  mb-5">Inicio de Sesión</h3>
                 <p class="description text-center mb-4 ">
-                    Te invitamos a iniciar sesion para poder acceder a más contenido de nuestra página
+                    Te invitamos a iniciar sesion para poder acceder a más contenido de nuestra página como por ejemplo el CARRITO
                 </p>
                 <div class="col-sm-12 col-lg-8 bg-white mt-5">
                     <div class="row p-5">
@@ -20,6 +20,9 @@
                         </div>
                         <button style="background-color: #e58b20;"name="enviar" class="btn px-3">Iniciar Sesión</button>
                         <div *ngIf="errorMessage">{{ errorMessage }}</div>
+                        <div class="text-center mt-3">
+                            <a routerLink="/registro" class="registro-enlace">¿No tienes cuenta? Regístrate aquí</a>
+                          </div>
                     </div>
                 </div>
             </div>

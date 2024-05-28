@@ -24,8 +24,6 @@ export class InicioSesionComponent {
         localStorage.setItem('token', response.token);
         alert('Inicio de sesion Correcto');
         this.router.navigate(['/']);
-        this.isLoggedIn = this.authService.getIsLoggedIn();
-        this.username = this.authService.getUsername();
       }
     }, error => {
       alert('Invalid credentials');

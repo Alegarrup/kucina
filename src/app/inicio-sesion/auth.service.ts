@@ -12,6 +12,7 @@ export class AuthService {
    isLoggedIn: boolean = false;
    username: string = '';
   
+   
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<any>(null);
@@ -21,12 +22,20 @@ export class AuthService {
     return this.currentUserSubject.value;
   }
 
-  login(nomUsuario: string, contrasenia: string): Observable<any> {
-    if(nomUsuario == 'Alegarrup' && contrasenia == 'kucina') {
-    this.isLoggedIn = true;
-    this.username = nomUsuario;
+  register(nomUsuario: string, contrasenia: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/register`, { nomUsuario, contrasenia });
   }
-    return this.http.post(`${this.apiUrl}/login`, { nomUsuario, contrasenia });
+
+  login(nomUsuario: string, contrasenia: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/login`, { nomUsuario, contrasenia }).pipe(
+      map(response => {
+        if (response && response.token) {
+          this.isLoggedIn =true;
+          this.username = nomUsuario;
+        }
+        return response;
+      })
+    );
   }
 
   logout(): void {

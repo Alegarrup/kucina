@@ -1,40 +1,28 @@
-<div class="jumbotron p-5 d-flex flex-column align-items-center justify-content-center" style="height: 40vh">
-  <h1 class="display-4  mb-5 fw-bold">KUCINA</h1>
-  <p class="lead">
-    KUCINA, es una empresa dedicada al sector del mueble de cocina. Esfuerzo, constancia, responsabilidad y
-    satisfacción del cliente, forman nuestra filosofía.
-  </p>
-  <hr class="my-4 " />
-  <p>
-    Esta es nuestra página Web.
-  </p>
-
+<div class="jumbotron p-5">
+  <h1 class="display-4 mb-5 fw-bold">KUCINA</h1>
+  <p class="lead">KUCINA, es una empresa dedicada al sector del mueble de cocina. Esfuerzo, constancia, responsabilidad y satisfacción del cliente, forman nuestra filosofía.</p>
+  <hr class="my-4" />
+  <p>Esta es nuestra página Web.</p>
 </div>
-<div style="position: relative;
-text-align: center;
-color: rgb(255, 255, 255);">
-  <img src="../assets/cocinaFront.jpg" width="100%" height="720">
-  <div class="centro" style="font-size: xx-large;">En KUCINA nos empeñamos en encontrar la comodidad de las personas, ofreciendo un estético mobiliario
-    basado en lo práctico, cómodo y ofreciendo garantía de durabilidad.</div>
+
+<div style="position: relative; text-align: center; color: rgb(255, 255, 255);">
+  <img src="../assets/cocinaFront.jpg" width="100%" height="auto" alt="Cocina Front">
+  <div class="centro">En KUCINA nos empeñamos en encontrar la comodidad de las personas, ofreciendo un estético mobiliario basado en lo práctico, cómodo y ofreciendo garantía de durabilidad.</div>
 </div>
-<div class="container">
 
-
-  <div class="row my-5">
-    <h3 class="display-6 text-primary text-center fw-bold">Descubre nuestros últimos productos</h3>
-    <div class="row p-5 justify-content-center bg-secondary" *ngFor="let product of products.slice(0, 3)">
-      <div class="col-3 rounded p-3 bg-white">
-        <div>
-          <img [src]="product.imgURL"
-              class="img-fluid rounded-3" alt="Shopping item"
-              style="width: 65px;">
-      </div>
-        <h5>{{ product.material }}</h5>
-        <p class="small mb-0">{{ product.ancho}} cm de ancho</p>
-        <p class="small mb-0">{{ product.largo }} cm de largo</p>
-        <p class="small mb-0">{{ product.precio }} $</p>
+<div class="container my-5">
+  <h3 class="display-6 text-primary text-center fw-bold">Descubre nuestros últimos productos</h3>
+  <div class="row p-5 justify-content-center bg-secondary">
+    <div class="col-12 col-md-6 col-lg-4 product-card" *ngFor="let product of products.slice(0, 3)">
+      <div class="card">
+        <img [src]="product.imgURL" class="card-img-top img-fluid rounded-3" alt="Shopping item">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.material }}</h5>
+          <p class="card-text">{{ product.ancho }} cm de ancho</p>
+          <p class="card-text">{{ product.largo }} cm de largo</p>
+          <p class="card-text">{{ product.precio }} $</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
-

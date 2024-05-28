@@ -20,65 +20,140 @@
 
   <title>Kucina</title>
 
+  <style>
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    nav .logo img {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 10px;
+    }
+
+    nav ul li a {
+      font-size: 1.2em;
+      text-decoration: none;
+      color: white;
+    }
+
+    .row#footer {
+      text-align: center;
+    }
+
+    .row#footer-icons .col-1 {
+      margin: 5px 10px;
+    }
+
+    .row#footer-icons .col-1 a i {
+      font-size: 1.5em;
+    }
+
+    .description {
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav .logo img {
+        height: 40px;
+      }
+
+      nav ul li {
+        margin: 5px 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav ul li a {
+        font-size: 1em;
+      }
+
+      .row#footer-icons .col-1 a i {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
   <nav class="bg-primary">
-    <div class="logo"><a routerLink="/">
-      <img height="100px" src="../assets/kucina-logo.png" alt="logo" />
-    </a>
-  </div>
-  <ul>
-    <li *ngIf="this.authService.getIsLoggedIn()">
-    <a class="usuario" style="font-size: x-large; text-decoration: none;"><img src="../assets/user.png" height="50px">  {{this.authService.getUsername()}}</a>
-    </li>
-      <li>
-        <a style="font-size: x-large;" routerLink="/empresa" >Empresa</a>
+    <div class="logo">
+      <a routerLink="/">
+        <img src="../assets/kucina-logo.png" alt="logo" />
+      </a>
+    </div>
+    <ul>
+      <li *ngIf="this.authService.getIsLoggedIn()">
+        <a class="usuario">
+          <img src="../assets/user.png" height="50px" alt="user-icon">
+          {{ this.authService.getUsername() }}
+        </a>
       </li>
       <li>
-        <a style="font-size: x-large;" routerLink="/catalogo">Cátalogo</a>
+        <a routerLink="/empresa">Empresa</a>
+      </li>
+      <li>
+        <a routerLink="/catalogo">Catálogo</a>
       </li>
       <li *ngIf="!this.authService.getIsLoggedIn()">
-        <a style="font-size: x-large;" routerLink="/inicio-sesion" >Iniciar Sesión</a>
+        <a routerLink="/inicio-sesion">Iniciar Sesión</a>
       </li>
       <li *ngIf="this.authService.getIsLoggedIn()">
-        <a style="font-size: x-large;" href="#" (click)="logout()">Cerrar Sesión</a>
+        <a href="#" (click)="logout()">Cerrar Sesión</a>
       </li>
-      <li>
-        <a style="font-size: x-large;" routerLink="/carrito">Carrito</a>
+      <li *ngIf="this.authService.getIsLoggedIn()">
+        <a routerLink="/carrito">Carrito</a>
       </li>
-
     </ul>
   </nav>
 
   <router-outlet></router-outlet>
 
-  <div style="width:100%;" class="row p-5 my-5 bg-primary" id="footer">
-    
+  <div class="container-fluid bg-primary py-5" id="footer">
     <div class="row mb-5 justify-content-center" id="footer-icons">
       <div class="col-1 text-center">
-        <i class="bi bi-linkedin fs-2" style="color: #0077b5"></i>
+        <a href="https://es.linkedin.com/"><i class="bi bi-linkedin fs-2" style="color: #0077b5"></i></a>
       </div>
       <div class="col-1 text-center">
-        <i class="bi bi-twitter fs-2" style="color: #38a1f3"></i>
+        <a href="https://x.com/"><i class="bi bi-twitter fs-2" style="color: #38a1f3"></i></a>
       </div>
       <div class="col-1 text-center">
-        <i class="bi bi-facebook fs-2" style="color: #3b5998"></i>
+        <a href="https://es-es.facebook.com/"><i class="bi bi-facebook fs-2" style="color: #3b5998"></i></a>
       </div>
       <div class="col-1 text-center">
-        <i class="bi bi-youtube fs-2" style="color: #c4302b"></i>
+        <a href="https://www.youtube.com/?gl=ES&hl=es"><i class="bi bi-youtube fs-2" style="color: #c4302b"></i></a>
       </div>
       <div class="col-1 text-center">
-        <i class="bi bi-envelope-fill fs-2" style="color: #0066cc"></i>
+        <a href="https://outlook.live.com/owa/?cobrandid=ab0455a0-8d03-46b9-b18b-df2f57b9e44c&nlp=1"><i class="bi bi-envelope-fill fs-2" style="color: #0066cc"></i></a>
       </div>
     </div>
-    <p class="description text-center ">
+    <p class="description" style="text-align: center;">
       2024 copyright. Todos los derechos reservados
       <br />
       Registrado en Écija, Sevilla
-      <br /><br />
     </p>
   </div>
+
   <script src="script.js"></script>
 </body>
 

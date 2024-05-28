@@ -335,3 +335,50 @@ span{
   background: #000;
   border: 1px solid #4070f4;
 }
+
+.about-us {
+  padding: 50px 0;
+}
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.about img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+}
+
+.about .text {
+  flex: 1;
+  padding: 20px;
+}
+
+.about .text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about .text h5 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.about .text p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about img {
+    margin-bottom: 20px;
+  }
+}

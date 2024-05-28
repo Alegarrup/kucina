@@ -7,6 +7,7 @@ import { EmpresaComponent } from './empresa/empresa.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { AuthGuard } from './auth.guard';
+import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [
   {path: '', component: IndexComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
    {
     path: 'carrito', component: CarritoComponent,
     canActivate: [AuthGuard],
-   }
+   },
+   { path: 'registro', component: RegistroComponent },
 ];
 
 @NgModule({

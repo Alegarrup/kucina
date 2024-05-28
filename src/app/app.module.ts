@@ -9,6 +9,7 @@ import { EmpresaComponent } from './empresa/empresa.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegistroComponent } from './registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     IndexComponent,
     EmpresaComponent,
     CatalogoComponent,
-    CarritoComponent
+    CarritoComponent,
+    RegistroComponent
   ],
   imports: [
     FormsModule,

@@ -253,5 +253,16 @@ body{
       left: 50%;
       transform: translate(-50%, -50%);
     }
+
+    .registro-enlace {
+      color: #e58b20; /* Color original */
+      text-decoration: none; /* Sin subrayado */
+      transition: color 0.3s ease; /* Transición suave del color */
+    }
+    
+    .registro-enlace:hover {
+      color: black !important; /* Color al hacer hover */
+      text-decoration: none; /* Sin subrayado al hacer hover */
+    }
     
     

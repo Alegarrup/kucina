@@ -1,43 +1,45 @@
 
-<div *ngIf="mostrarBotones">
-<div class="column">
-    <img src="../../assets/cocinaMadera.jpg" alt="Image" class="image" style="height: 800px;">
-    <button class="button" (click)="filterProductsByCategory('madera')">Madera</button>
-  </div>
-  
-  <div class="column">
-    <img src="../../assets/cocinaLacado.jpg" alt="Image" class="image" style="height: 800px;" >
-    <button class="button" (click)="filterProductsByCategory('lacado')">Lacado</button>
-  </div>
-  
-  <div class="column">
-    <img src="../../assets/cocinaLaminado.jpg" alt="Image" class="image">
-    <button class="button" (click)="filterProductsByCategory('laminado')">Laminado</button>
+<div class="container mt-5" *ngIf="mostrarBotones">
+  <div class="row">
+    <div class="col-12 col-md-4 column">
+      <img src="../../assets/cocinaMadera.jpg" alt="Image" class="image">
+      <button class="btn  button" (click)="filterProductsByCategory('madera')">Madera</button>
+    </div>
+    <div class="col-12 col-md-4 column">
+      <img src="../../assets/cocinaLacado.jpg" alt="Image" class="image">
+      <button class="btn button" (click)="filterProductsByCategory('lacado')">Lacado</button>
+    </div>
+    <div class="col-12 col-md-4 column">
+      <img src="../../assets/cocinaLaminado.jpg" alt="Image" class="image">
+      <button class="btn button" (click)="filterProductsByCategory('laminado')">Laminado</button>
+    </div>
   </div>
 </div>
 
-
-  <div class="card mb-3" *ngIf="!mostrarBotones">
-    <div class="back-button-container" style=" margin-top: 20px;
-    text-align: center;">
-      <button class="button" (click)="atras()">Atrás</button>
-    </div>
-    <div class="card-body" *ngFor="let product of productosFiltrados">
-        <div class="d-flex justify-content-between" >
+<div class="container mt-5" *ngIf="!mostrarBotones">
+  <div class="back-button-container">
+    <button class="btn button" (click)="atras()">Atrás</button>
+  </div>
+  <div class="row">
+    <div class="col-12" *ngFor="let product of productosFiltrados">
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
             <div class="d-flex flex-row align-items-center">
-                <div>
-                    <img [src]="product.imgURL" alt="imgURL"
-                        class="img-fluid rounded-3"
-                        style="width: 65px;">
-                </div>
-                <div class="ms-3">
-                    <h5>{{ product.material }}</h5>
-                    <p class="small mb-0">{{ product.ancho}} cm de ancho</p>
-                    <p class="small mb-0">{{ product.largo }} cm de largo</p>
-                    <h6 class="mb-0">{{product.precio}} €</h6>
-                </div>
+              <div>
+                <img [src]="product.imgURL" alt="imgURL" class="img-fluid rounded-3" style="width: 65px;">
+              </div>
+              <div class="ms-3">
+                <h5>{{ product.material }}</h5>
+                <p class="small mb-0">{{ product.ancho}} cm de ancho</p>
+                <p class="small mb-0">{{ product.largo }} cm de largo</p>
+                <h6 class="mb-0">{{product.precio}} €</h6>
+              </div>
             </div>
+            <button class="btn" style="background-color: #e58b20;" (click)="addToCart(product)">Añadir al carrito</button>
+          </div>
         </div>
-        <button style="margin-left: 80%; height: 100px; width: 100px;" class="button" type="button" (click)="addToCart(product)">Añadir al carrito</button>
+      </div>
     </div>
+  </div>
 </div>

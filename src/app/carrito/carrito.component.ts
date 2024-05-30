@@ -36,6 +36,16 @@ export class CarritoComponent {
     this.precioTotal = this.productoServicio.getTotalPrice();
   }
 
+  removeItem(event: Event, index: number): void {
+    event?.preventDefault();
+    this.productoServicio.removeFromCart(index);
+    this.items = this.productoServicio.getItems();
+    this.updateTotal();
+  }
+
+  updateTotal(): void {
+    this.precioTotal = this.productoServicio.getTotalPrice();
+  }
 
   finalizarCompra() {
     const email = 'tfcalegarrup@hotmail.com'; // Reemplaza con el correo al que quieres enviar

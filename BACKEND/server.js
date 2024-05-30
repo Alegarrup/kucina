@@ -39,6 +39,8 @@ app.get('/api/productos', (req, res) => {
     });
 });
 
+
+
 app.get('/api/productosFiltrados/:material', (req, res) => {
     const material = req.params.material;
 
@@ -65,21 +67,21 @@ app.get('/api/categoria', (req, res) => {
 
 app.post('/api/register', (req, res) => {
     const { nomUsuario, contrasenia } = req.body;
-  
+
     // Encriptar la contraseña
     bcrypt.hash(contrasenia, 10, (err, hash) => {
       if (err) {
         res.status(500).json({ error: 'Error hashing password' });
         return;
       }
-  
+
       const sql = 'INSERT INTO USUARIO (nomUsuario, contrasenia) VALUES (?, ?)';
       connection.query(sql, [nomUsuario, hash], (error, results) => {
         if (error) {
           res.status(500).json({ error: 'Error registering user' });
           return;
         }
-  
+
         res.status(201).json({ message: 'User registered successfully' });
       });
     });

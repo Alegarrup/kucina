@@ -20,7 +20,7 @@
                                 </div>
 
                                 <div class="card mb-3">
-                                    <div class="card-body" *ngFor="let item of items">
+                                    <div class="card-body" *ngFor="let item of items; let i = index">
                                         <div class="d-flex justify-content-between" >
                                             <div class="d-flex flex-row align-items-center">
                                                 <div>
@@ -38,14 +38,13 @@
                                                 <div style="width: 80px;">
                                                     <h5 class="mb-0">{{item.precio}} $</h5>
                                                 </div>
-                                                <a href="#!" style="color: #cecece;"><i
-                                                        class="fas fa-trash-alt"></i></a>
+                                                <button (click)="removeItem($event, i)" class="btn button" style="color: #ffffff; background-color: #fd0505; border: 1px solid black; border-radius: 10%;">Borrar<i class="fas fa-trash-alt"></i></button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                
+
 
                             </div>
                             <div class="col-lg-5">

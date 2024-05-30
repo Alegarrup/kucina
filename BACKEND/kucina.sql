@@ -38,7 +38,7 @@ INSERT INTO `USUARIO` (`nomUsuario`,`contrasenia`) VALUES ('Alegarrup','kucina')
 -- Table `kucina`.`PEDIDO`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `kucina`.`PEDIDO` (
-  `idPedido` INT NOT NULL,
+  `idPedido` INT NOT NULL AUTO_INCREMENT,
   `pedidoConfirmado` TINYINT NULL,
   `USUARIO_idUsuario` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`idPedido`, `USUARIO_idUsuario`),

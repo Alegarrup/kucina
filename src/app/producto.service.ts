@@ -34,6 +34,11 @@ export class ProductoService {
     return this.items;
   }
 
+  removeFromCart(index: number): void {
+    this.items.splice(index, 1);
+  }
+
+
   getTotalPrice(): number {
     return this.items.reduce((total, product) => total + product.precio, 0);
   }
